@@ -1,4 +1,5 @@
 from .database import Database
+from .person import Person
 
 import os
 
@@ -9,13 +10,9 @@ from werkzeug.security import check_password_hash
 from flask_login import login_user, UserMixin
 
 
-class Admin(UserMixin, Database):
+class Admin(UserMixin, Person, Database):
 
     def __init__(self, email: str, password: str):
-        self.id = None
-        self.__document = None
-        self.__lastnames = None
-        self.__names = None
         self.__email = email
         self.__password = password
 
