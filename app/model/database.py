@@ -6,6 +6,8 @@ import logging
 
 import sys
 
+import json
+
 
 class Database():
 
@@ -25,3 +27,6 @@ class Database():
     def _close_connection(self):
         self._connection.close()
         del self._connection
+
+    def _get_query(self, name: str):
+        return json.loads(open(f"{os.getcwd()}/app/resources/querys.json").read())[name]
