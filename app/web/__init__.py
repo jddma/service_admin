@@ -23,5 +23,5 @@ api = Api(web_controllers)
 api.add_resource(AdminInformationContoller, '/info')
 api.add_resource(LoginController, '/login')
 api.add_resource(PlayerController, '/player/<document>', '/player')
-api.add_resource(TournamentController, '/tournament')
+api.add_resource(TournamentController, '/tournament/<name>')
 

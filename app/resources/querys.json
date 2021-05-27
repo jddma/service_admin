@@ -2,5 +2,6 @@
   "findUserByEmail": "SELECT * FROM users WHERE email = %s AND idRole = 2",
   "findPlayerByDocument": "SELECT * FROM users WHERE document = %s AND idRole = 1",
   "insertNewPlayer": "INSERT INTO users(names, lastnames, document, address, phone, email, password, idRole) VALUES (%s, %s, %s, %s, %s, %s, %s, 1)",
-  "insertNewTournament": "INSERT INTO tournaments(name, start_Date, end_date, active) VALUES (%s, %s, %s, 0)"
+  "insertNewTournament": "INSERT INTO tournaments(name, start_Date, end_date, active) VALUES (%s, %s, %s, 0)",
+  "findTournamentsByName": "SELECT * FROM tournaments WHERE name LIKE '%%s%'"
 }

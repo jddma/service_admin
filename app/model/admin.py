@@ -109,3 +109,15 @@ class Admin(UserMixin, Person, Database):
             self._close_connection()
 
             return True
+
+    def search_tournaments(self, name: str):
+        self._open_connection()
+
+        sql = self._get_query('findTournamentsByName')
+        with self._connection.cursor() as cursor:
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+            if rows is None:
+                return False
+            else:
+                return rows
